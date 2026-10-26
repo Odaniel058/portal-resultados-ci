@@ -5,6 +5,7 @@
   "description": "Laboratório acadêmico de integração contínua com Jenkins",
   "engines": { "node": ">=22" },
   "scripts": {
-    "validate:data": "node src/validateCandidates.js data/candidatos.json"
+    "validate:data": "node src/validateCandidates.js data/candidatos.json",
+    "test": "node --test test/*.test.js"
   }
 }
