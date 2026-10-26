@@ -4,5 +4,7 @@
   "private": true,
   "description": "Laboratório acadêmico de integração contínua com Jenkins",
   "engines": { "node": ">=22" },
-  "scripts": {}
+  "scripts": {
+    "validate:data": "node src/validateCandidates.js data/candidatos.json"
+  }
 }
