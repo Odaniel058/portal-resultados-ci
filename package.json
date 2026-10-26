@@ -6,6 +6,7 @@
   "engines": { "node": ">=22" },
   "scripts": {
     "validate:data": "node src/validateCandidates.js data/candidatos.json",
-    "test": "node --test test/*.test.js"
+    "test": "node --test test/*.test.js",
+    "check:version": "node scripts/checkVersionSync.js"
   }
 }
