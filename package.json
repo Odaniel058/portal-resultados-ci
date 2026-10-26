@@ -1,0 +1,8 @@
+{
+  "name": "portal-resultados-ci",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Laboratório acadêmico de integração contínua com Jenkins",
+  "engines": { "node": ">=22" },
+  "scripts": {}
+}
