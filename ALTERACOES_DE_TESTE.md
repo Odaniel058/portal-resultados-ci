@@ -19,12 +19,23 @@ diagnóstico e evidência antes de corrigir.
 - Os testes e a sincronização foram ignorados por falha anterior; não há nova publicação.
 - Benefício do bloqueio: impedir a geração e o arquivamento de uma lista inconsistente.
 - Correção: restaurar `55566677788` no quinto registro, sem alterar as regras do validador.
-- Verificação da recuperação no Jenkins: pendente do próximo Build; conferir novo hash
-  no Console, SUCCESS, relatório e manifesto antes de declarar recuperação.
+- Recuperação observada: Build #3 terminou com SUCCESS e arquivou artefatos,
+  conforme print do Console enviado pelo operador. Commit de correção: `6be95d4`.
+- Ainda falta conferir o hash no Console ou manifesto do Build #3 para completar
+  a evidência de rastreabilidade dessa recuperação.
 
 ## Falha B: versões divergentes
 
-Pendente de execução.
+- Commit que introduziu a falha: `d4e08a0` (`test: altera apenas version.txt`).
+- Execução observada: Build #4 bloqueado em `5. Sincronizar versões`.
+- Evidência: print do Console mostra 15 testes aprovados, version.txt em 1.1.0
+  e package.json, data/candidatos.json e public/index.html em 1.0.0.
+- Mensagem: `SINCRONIZAÇÃO REPROVADA: Todos os artefatos devem declarar a mesma versão.`
+- A geração da publicação e o Quality Gate foram ignorados por falha anterior.
+- Causa: somente a versão oficial foi alterada; dados, pacote e página ficaram antigos.
+- Impacto: não seria possível identificar uma versão única e coerente da release.
+- Correção: sincronizar as quatro fontes em 1.1.0, inclusive o texto visível no HTML.
+- Recuperação no Jenkins: pendente da próxima execução e da conferência do manifesto.
 
 ## Concorrência: execução anterior abortada
 
